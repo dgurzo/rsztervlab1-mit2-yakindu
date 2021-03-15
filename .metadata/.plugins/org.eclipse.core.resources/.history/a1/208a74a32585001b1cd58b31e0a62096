@@ -36,6 +36,8 @@ public class Main {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
+				System.out.println(state.getName());
+				
 				// 2.3
 				if(previousState != null) {
 					System.out.println(previousState.getName() + " -> " + state.getName());
@@ -51,7 +53,7 @@ public class Main {
 				}
 				
 				// 2.5
-				if(state.getName().equals("")) {
+				if(state.getName().equals("empty")) {
 					state.setName("State" + cnt);
 					cnt++;
 					System.out.println(state.getName());

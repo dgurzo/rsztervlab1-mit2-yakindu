@@ -29,14 +29,10 @@ public class Main {
 		// Previous state for 2.3
 		State previousState = null;
 		
-		// State number for 2.5
-		int cnt = 1;
-		
 		while (iterator.hasNext()) {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
-				// 2.3
 				if(previousState != null) {
 					System.out.println(previousState.getName() + " -> " + state.getName());
 				}
@@ -44,18 +40,6 @@ public class Main {
 					System.out.println(state.getName());
 				}
 				previousState = state;
-				
-				// 2.4
-				if(state.getOutgoingTransitions().size() == 0) {
-					System.out.println(state.getName() + " csapda");
-				}
-				
-				// 2.5
-				if(state.getName().equals("")) {
-					state.setName("State" + cnt);
-					cnt++;
-					System.out.println(state.getName());
-				}
 			}
 		}
 		

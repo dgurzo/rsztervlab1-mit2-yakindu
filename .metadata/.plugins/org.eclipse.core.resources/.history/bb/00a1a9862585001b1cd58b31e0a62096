@@ -51,7 +51,7 @@ public class Main {
 				}
 				
 				// 2.5
-				if(state.getName().equals("")) {
+				if(state.getName().equals("empty")) {
 					state.setName("State" + cnt);
 					cnt++;
 					System.out.println(state.getName());
