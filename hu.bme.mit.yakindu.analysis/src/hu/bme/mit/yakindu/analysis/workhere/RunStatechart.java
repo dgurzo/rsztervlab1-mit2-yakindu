@@ -34,7 +34,11 @@ public class RunStatechart {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while(true) {
 			String command = br.readLine();
-			if(command.equals("start")) {
+			if(command.equals("exit")) {
+				System.out.println("Exit now");
+				System.exit(0);
+			}
+			else if(command.equals("start")) {
 				s.raiseStart();
 				s.runCycle();
 			}
@@ -45,10 +49,6 @@ public class RunStatechart {
 			else if(command.equals("black")) {
 				s.raiseBlack();
 				s.runCycle();
-			}
-			else if(command.equals("exit")) {
-				System.out.println("Exit now");
-				System.exit(0);
 			}
 			else {
 				System.out.println("Bad command!");

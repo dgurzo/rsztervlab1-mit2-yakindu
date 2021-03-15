@@ -12,10 +12,10 @@ public class ExampleStatemachine implements IExampleStatemachine {
 			start = true;
 		}
 		
-		private boolean white;
+		private boolean feher;
 		
-		public void raiseWhite() {
-			white = true;
+		public void raiseFeher() {
+			feher = true;
 		}
 		
 		private boolean black;
@@ -34,19 +34,19 @@ public class ExampleStatemachine implements IExampleStatemachine {
 			this.whiteTime = value;
 		}
 		
-		private long blackTime;
+		private long feketeTime;
 		
-		public long getBlackTime() {
-			return blackTime;
+		public long getFeketeTime() {
+			return feketeTime;
 		}
 		
-		public void setBlackTime(long value) {
-			this.blackTime = value;
+		public void setFeketeTime(long value) {
+			this.feketeTime = value;
 		}
 		
 		protected void clearEvents() {
 			start = false;
-			white = false;
+			feher = false;
 			black = false;
 		}
 	}
@@ -86,7 +86,7 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		clearOutEvents();
 		sCInterface.setWhiteTime(60);
 		
-		sCInterface.setBlackTime(60);
+		sCInterface.setFeketeTime(60);
 	}
 	
 	public void enter() {
@@ -207,8 +207,8 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		sCInterface.raiseStart();
 	}
 	
-	public void raiseWhite() {
-		sCInterface.raiseWhite();
+	public void raiseFeher() {
+		sCInterface.raiseFeher();
 	}
 	
 	public void raiseBlack() {
@@ -223,12 +223,12 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		sCInterface.setWhiteTime(value);
 	}
 	
-	public long getBlackTime() {
-		return sCInterface.getBlackTime();
+	public long getFeketeTime() {
+		return sCInterface.getFeketeTime();
 	}
 	
-	public void setBlackTime(long value) {
-		sCInterface.setBlackTime(value);
+	public void setFeketeTime(long value) {
+		sCInterface.setFeketeTime(value);
 	}
 	
 	/* Entry action for state 'Black'. */
@@ -351,7 +351,7 @@ public class ExampleStatemachine implements IExampleStatemachine {
 				} else {
 					if (timeEvents[0]) {
 						exitSequence_main_region_Black();
-						sCInterface.setBlackTime(sCInterface.getBlackTime() - 1);
+						sCInterface.setFeketeTime(sCInterface.getFeketeTime() - 1);
 						
 						enterSequence_main_region_Black_default();
 					} else {
@@ -368,7 +368,7 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		
 		if (try_transition) {
 			if (react()==false) {
-				if (sCInterface.white) {
+				if (sCInterface.feher) {
 					exitSequence_main_region_White();
 					enterSequence_main_region_Black_default();
 				} else {
