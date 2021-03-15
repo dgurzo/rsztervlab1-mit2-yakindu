@@ -19,3 +19,38 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.yakindu.sct.builder.SCTBuilder 2 0 2021-03-15 01:36:47.073
 !MESSAGE Cannot generate Code for Statechart /hu.bme.mit.yakindu.analysis/model_input/example.sct. The file contains errors.
+
+!ENTRY org.eclipse.help 4 0 2021-03-15 02:07:38.087
+!MESSAGE Required attribute "label" missing from "topic" element in "/org.yakindu.sct.doc.user/help/user-guide/c-domain-toc.xml" (skipping element)
+
+!ENTRY org.eclipse.help 4 0 2021-03-15 02:07:38.128
+!MESSAGE Required attribute "label" missing from "topic" element in "/org.yakindu.sct.doc.user/help/user-guide/scxml_domain-toc.xml" (skipping element)
+
+!ENTRY org.eclipse.jface 2 0 2021-03-15 03:30:20.521
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-03-15 03:30:20.521
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d8869e5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@c5e96b7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@c5e96b7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)

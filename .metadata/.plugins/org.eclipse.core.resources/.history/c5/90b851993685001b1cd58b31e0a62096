@@ -34,11 +34,7 @@ public class RunStatechart {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while(true) {
 			String command = br.readLine();
-			if(command.equals("start")) {
-				s.raiseStart();
-				s.runCycle();
-			}
-			else if(command.equals("white")) {
+			if(command.equals("white")) {
 				s.raiseWhite();
 				s.runCycle();
 			}

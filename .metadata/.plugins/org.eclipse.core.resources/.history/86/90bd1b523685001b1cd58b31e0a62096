@@ -1,7 +1,5 @@
 package hu.bme.mit.yakindu.analysis.workhere;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
 
 import hu.bme.mit.yakindu.analysis.RuntimeService;
@@ -20,44 +18,13 @@ public class RunStatechart {
 		s.init();
 		s.enter();
 		s.runCycle();
-		
-		/*print(s);
+		print(s);
 		s.raiseStart();
 		s.runCycle();
 		System.in.read();
 		s.raiseWhite();
 		s.runCycle();
 		print(s);
-		System.exit(0);*/
-		
-		// 3.5
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		while(true) {
-			String command = br.readLine();
-			if(command.equals("start")) {
-				s.raiseStart();
-				s.runCycle();
-			}
-			else if(command.equals("white")) {
-				s.raiseWhite();
-				s.runCycle();
-			}
-			else if(command.equals("black")) {
-				s.raiseBlack();
-				s.runCycle();
-			}
-			else if(command.equals("exit")) {
-				System.out.println("Exit now");
-				System.exit(0);
-			}
-			else {
-				System.out.println("Bad command!");
-				break;
-			}
-			// WhiteTime and BlackTime after every command
-			print(s);
-		}
-		br.close();
 		System.exit(0);
 	}
 
